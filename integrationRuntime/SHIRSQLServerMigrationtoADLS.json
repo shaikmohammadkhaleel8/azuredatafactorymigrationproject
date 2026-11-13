@@ -1,0 +1,7 @@
+{
+	"name": "SHIRSQLServerMigrationtoADLS",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "This is a self hosted integration run time which is helpful to connect the SQL server and Cloud during Migration from SQL to ADLS"
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"name": "adf-sql-adls-migrations-dev",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "indiasouthcentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "62604697-0a83-49d6-97dc-f082dcf31a2f",
+		"tenantId": "5ca76f2a-168c-45c0-bda5-736e2829a4ce"
+	}
+}

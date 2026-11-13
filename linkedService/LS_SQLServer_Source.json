@@ -1,0 +1,21 @@
+{
+	"name": "LS_SQLServer_Source",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "DESKTOP-R96BLRE\\SQLEXPRESS",
+			"database": "sqlmigration",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "Windows",
+			"userName": "DESKTOP-R96BLRE\\Rizwana Khaleel",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJlYWIxNDUxMS1iNjhjLTQyMzQtYTI5NC00ZWM5ZDNmOGQyNzIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIRSQLServerMigrationtoADLS",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

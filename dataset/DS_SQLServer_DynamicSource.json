@@ -1,0 +1,69 @@
+{
+	"name": "DS_SQLServer_DynamicSource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLServer_Source",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"pTableName": {
+				"type": "string",
+				"defaultValue": "DimCustomer"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "CustomerKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CustomerID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FirstName",
+				"type": "varchar"
+			},
+			{
+				"name": "LastName",
+				"type": "varchar"
+			},
+			{
+				"name": "Email",
+				"type": "varchar"
+			},
+			{
+				"name": "City",
+				"type": "varchar"
+			},
+			{
+				"name": "Country",
+				"type": "varchar"
+			},
+			{
+				"name": "StartDate",
+				"type": "date"
+			},
+			{
+				"name": "EndDate",
+				"type": "date"
+			},
+			{
+				"name": "IsCurrent",
+				"type": "bit"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().pTableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
