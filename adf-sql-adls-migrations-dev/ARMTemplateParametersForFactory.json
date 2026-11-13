@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-sql-adls-migrations-dev"
+		},
+		"LS_ADLSGen2_Sink_accountKey": {
+			"value": ""
+		},
+		"LS_PROD_ADLS_SQL_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_SQLServer_Source_password": {
+			"value": ""
+		},
+		"LS_ADLSGen2_Sink_properties_typeProperties_url": {
+			"value": "https://stgccsqldalsmigrationdev.dfs.core.windows.net/"
+		},
+		"LS_PROD_ADLS_SQL_PARQUET_properties_typeProperties_url": {
+			"value": "https://stgsqlmigrationprod01.dfs.core.windows.net/"
+		},
+		"LS_SQLServer_Source_properties_typeProperties_server": {
+			"value": "DESKTOP-R96BLRE\\SQLEXPRESS"
+		},
+		"LS_SQLServer_Source_properties_typeProperties_database": {
+			"value": "sqlmigration"
+		},
+		"LS_SQLServer_Source_properties_typeProperties_userName": {
+			"value": "DESKTOP-R96BLRE\\Rizwana Khaleel"
+		}
+	}
+}

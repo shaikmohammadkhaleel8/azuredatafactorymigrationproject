@@ -1,0 +1,98 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-sql-adls-migrations-dev"
+		},
+		"LS_ADLSGen2_Sink_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLSGen2_Sink'"
+		},
+		"LS_PROD_ADLS_SQL_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PROD_ADLS_SQL_PARQUET'"
+		},
+		"LS_SQLServer_Source_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQLServer_Source'"
+		},
+		"LS_ADLSGen2_Sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://stgccsqldalsmigrationdev.dfs.core.windows.net/"
+		},
+		"LS_PROD_ADLS_SQL_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://stgsqlmigrationprod01.dfs.core.windows.net/"
+		},
+		"LS_SQLServer_Source_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-R96BLRE\\SQLEXPRESS"
+		},
+		"LS_SQLServer_Source_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqlmigration"
+		},
+		"LS_SQLServer_Source_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "DESKTOP-R96BLRE\\Rizwana Khaleel"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-sql-adls-migrations-dev_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_ADLSGen2_Sink_accountKey": {
+						"value": "[parameters('LS_ADLSGen2_Sink_accountKey')]"
+					},
+					"LS_PROD_ADLS_SQL_PARQUET_accountKey": {
+						"value": "[parameters('LS_PROD_ADLS_SQL_PARQUET_accountKey')]"
+					},
+					"LS_SQLServer_Source_password": {
+						"value": "[parameters('LS_SQLServer_Source_password')]"
+					},
+					"LS_ADLSGen2_Sink_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLSGen2_Sink_properties_typeProperties_url')]"
+					},
+					"LS_PROD_ADLS_SQL_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_PROD_ADLS_SQL_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_SQLServer_Source_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQLServer_Source_properties_typeProperties_server')]"
+					},
+					"LS_SQLServer_Source_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQLServer_Source_properties_typeProperties_database')]"
+					},
+					"LS_SQLServer_Source_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQLServer_Source_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
