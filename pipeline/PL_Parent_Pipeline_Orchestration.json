@@ -56,6 +56,10 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
+								"pipeline": {
+									"referenceName": "PL_Child_Pipeline_Incremental",
+									"type": "PipelineReference"
+								},
 								"waitOnCompletion": true
 							}
 						}
